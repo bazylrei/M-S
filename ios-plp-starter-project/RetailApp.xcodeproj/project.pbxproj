@@ -39,6 +39,7 @@
 		D9FEF9012603D3FD00ABBD5A /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FEF9002603D3FD00ABBD5A /* Path.swift */; };
 		D9FEF90C2603D70E00ABBD5A /* ProductListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FEF90B2603D70E00ABBD5A /* ProductListingViewController.swift */; };
 		D9FEF9122603D72B00ABBD5A /* ProductListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FEF9112603D72B00ABBD5A /* ProductListingViewModel.swift */; };
+		D9FEF9162603D84900ABBD5A /* ProductsListingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FEF9152603D84900ABBD5A /* ProductsListingService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		D9FEF9002603D3FD00ABBD5A /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		D9FEF90B2603D70E00ABBD5A /* ProductListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListingViewController.swift; sourceTree = "<group>"; };
 		D9FEF9112603D72B00ABBD5A /* ProductListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListingViewModel.swift; sourceTree = "<group>"; };
+		D9FEF9152603D84900ABBD5A /* ProductsListingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListingService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			children = (
 				30590CAB2211BA4300FE716E /* ImageService.swift */,
 				30C4F5E421F27BBD0042865A /* ProductDetailsService.swift */,
+				D9FEF9152603D84900ABBD5A /* ProductsListingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -260,8 +263,8 @@
 		D9FEF9042603D63300ABBD5A /* ProductListing */ = {
 			isa = PBXGroup;
 			children = (
-				D9FEF90B2603D70E00ABBD5A /* ProductListingViewController.swift */,
 				D9FEF9112603D72B00ABBD5A /* ProductListingViewModel.swift */,
+				D9FEF90B2603D70E00ABBD5A /* ProductListingViewController.swift */,
 			);
 			path = ProductListing;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				D9FEF90C2603D70E00ABBD5A /* ProductListingViewController.swift in Sources */,
 				D9FEF9012603D3FD00ABBD5A /* Path.swift in Sources */,
 				3068059C21F21F9900B99BB8 /* ProductDetails.swift in Sources */,
+				D9FEF9162603D84900ABBD5A /* ProductsListingService.swift in Sources */,
 				3068059A21F21F8400B99BB8 /* ProductDetailsViewModel.swift in Sources */,
 				304698AD21F0DBB90056504A /* HTTPError.swift in Sources */,
 				306805AC21F22FC600B99BB8 /* PriceFormatter.swift in Sources */,
