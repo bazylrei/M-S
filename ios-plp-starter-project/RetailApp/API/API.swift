@@ -19,7 +19,7 @@ class API {
   private let urlSession: URLSessionProtocol
   private let baseURL: URL
 
-  init(urlSession: URLSessionProtocol, baseURL: URL) {
+  init(urlSession: URLSessionProtocol = URLSession.shared, baseURL: URL = Path.baseURL) {
     self.urlSession = urlSession
     self.baseURL = baseURL
   }
@@ -28,13 +28,13 @@ class API {
     var urlRequest = URLRequest(url: baseURL.appendingPathComponent(resource.path))
     urlRequest.httpMethod = resource.method
     urlRequest.httpBody = resource.body
+    urlRequest.setValue(base64LoginString, forHTTPHeaderField: "Authorization")
     urlSession.resumableDataTask(with: urlRequest) { data, urlResponse, error in
       func completionOnMain(_ result: Result<Model, Error>) {
         DispatchQueue.main.async {
           completion(result)
         }
       }
-
       guard let urlResponse = urlResponse else {
         completionOnMain(.error(HTTPError.noResponse))
         return
@@ -54,8 +54,16 @@ class API {
       guard let data = data else {
         fatalError("Missing data when should always be present")
       }
-
       completionOnMain(resource.parse(data))
     }.resume()
+  }
+  
+  private var base64LoginString: String {
+    let username = "admin"
+    let password = "password"
+    let loginString = String(format: "%@:%@", username, password)
+    let loginData = loginString.data(using: String.Encoding.utf8)!
+    let base64LoginString = loginData.base64EncodedString()
+    return "Basic \(base64LoginString)"
   }
 }

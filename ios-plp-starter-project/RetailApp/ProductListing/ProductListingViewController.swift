@@ -8,7 +8,8 @@ class ProductListingViewController: UICollectionViewController {
   
   init(viewModel: ProductListingViewModel = ProductListingViewModel()) {
     self.viewModel = viewModel
-    super.init(nibName: nil, bundle: nil)
+    let collectionViewLayout = UICollectionViewFlowLayout()
+    super.init(collectionViewLayout: collectionViewLayout)
   }
   
   required init?(coder: NSCoder) {
@@ -18,16 +19,23 @@ class ProductListingViewController: UICollectionViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+    bind()
+  }
+  
+  private func bind() {
+    viewModel.productDetails.bind(self) { [weak self] price in
+      self?.collectionView.reloadData()
+    }
   }
   
   // MARK: UICollectionViewDataSource
   
   override func numberOfSections(in collectionView: UICollectionView) -> Int {
-    return 0
+    viewModel.numberOfSections
   }
   
   override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 0
+    viewModel.numberOfProducts
   }
   
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

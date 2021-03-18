@@ -6,8 +6,7 @@ struct Path {
   private static let product = "product/"
   private static let user = "api/user/"
   private static let offers = "offers"
-  
-  static var productsURLString: String {
-    "\(base)\(products)"
-  }
+
+  static var baseURL = URL(string: base)!
+  static var productsURLString = products
 }

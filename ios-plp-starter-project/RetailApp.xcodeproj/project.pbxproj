@@ -40,6 +40,7 @@
 		D9FEF90C2603D70E00ABBD5A /* ProductListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FEF90B2603D70E00ABBD5A /* ProductListingViewController.swift */; };
 		D9FEF9122603D72B00ABBD5A /* ProductListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FEF9112603D72B00ABBD5A /* ProductListingViewModel.swift */; };
 		D9FEF9162603D84900ABBD5A /* ProductsListingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FEF9152603D84900ABBD5A /* ProductsListingService.swift */; };
+		D9FEF91C2603F0EE00ABBD5A /* ProductListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FEF91B2603F0EE00ABBD5A /* ProductListing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		D9FEF90B2603D70E00ABBD5A /* ProductListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListingViewController.swift; sourceTree = "<group>"; };
 		D9FEF9112603D72B00ABBD5A /* ProductListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListingViewModel.swift; sourceTree = "<group>"; };
 		D9FEF9152603D84900ABBD5A /* ProductsListingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListingService.swift; sourceTree = "<group>"; };
+		D9FEF91B2603F0EE00ABBD5A /* ProductListing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 				3068059B21F21F9900B99BB8 /* ProductDetails.swift */,
 				306805A621F22A7200B99BB8 /* ProductInformation.swift */,
 				3068059D21F21FC100B99BB8 /* Price.swift */,
+				D9FEF91B2603F0EE00ABBD5A /* ProductListing.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 			files = (
 				304698AB21F0D7C50056504A /* Result.swift in Sources */,
 				D9FEF9122603D72B00ABBD5A /* ProductListingViewModel.swift in Sources */,
+				D9FEF91C2603F0EE00ABBD5A /* ProductListing.swift in Sources */,
 				3046987821F0D55F0056504A /* ProductDetailsViewController.swift in Sources */,
 				D9FEF90C2603D70E00ABBD5A /* ProductListingViewController.swift in Sources */,
 				D9FEF9012603D3FD00ABBD5A /* Path.swift in Sources */,
