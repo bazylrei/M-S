@@ -17,6 +17,10 @@ class ProductListingViewModel {
     productDetails.value.count
   }
   
+  func product(at index: Int) -> ProductDetails {
+    productDetails.value[index]
+  }
+  
   private func getProducts() {
     productListingService.getProducts { [weak self] result in
       do {

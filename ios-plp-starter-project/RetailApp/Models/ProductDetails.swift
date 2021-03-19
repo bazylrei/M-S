@@ -7,3 +7,5 @@ struct ProductDetails: Codable {
   let price: Price
   let information: [ProductInformation]?
 }
+
+extension ProductDetails: ProductRequest {}

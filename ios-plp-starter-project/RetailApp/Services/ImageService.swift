@@ -11,7 +11,7 @@ protocol ImageService {
 class ImageServiceImplementation: ImageService {
   private let api: API
 
-  init(api: API) {
+  init(api: API = API()) {
     self.api = api
   }
 

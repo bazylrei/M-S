@@ -7,12 +7,12 @@ protocol ProductDetailsService {
 class ProductDetailsServiceImplementation: ProductDetailsService {
   private let api: API
 
-  init(api: API) {
+  init(api: API = API()) {
     self.api = api
   }
 
   func getProduct(id: String, completion: @escaping (Result<ProductDetails, Error>) -> Void) {
-    let resource = Resource<ProductDetails>(path: "api/product/\(id)")
+    let resource = Resource<ProductDetails>(path: "product/\(id)")
     api.load(resource, completion: completion)
   }
 }
