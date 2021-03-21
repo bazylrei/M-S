@@ -15,6 +15,4 @@ class ProductListingServiceImplementation: ProductListingService {
     let resource = Resource<ProductListing>(path: Path.productsURLString)
     api.load(resource, completion: completion)
   }
-  
-  
 }

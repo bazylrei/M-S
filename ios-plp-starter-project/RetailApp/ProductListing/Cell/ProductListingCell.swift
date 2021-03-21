@@ -1,17 +1,13 @@
 import UIKit
 
-private class Dimensions {
-  static let horizontalMargin: CGFloat = 5.0
-  static let imageToTitleMargin: CGFloat = 8.0
-  static let titleToPriceMargin: CGFloat = 15.0
-}
 
 class ProductListingCell: UICollectionViewCell {
   static let identifier = String(describing: ProductListingCell.self)
   let viewModel: ProductListingCellViewModel
   
   let imageView = UIImageView()
-  let titleLabel = UILabel()
+  let offerImageView = UIImageView()
+  let titleLabel = UITextView()
   let priceLabel = UILabel()
   
   override init(frame: CGRect) {
@@ -25,8 +21,9 @@ class ProductListingCell: UICollectionViewCell {
     fatalError("init(coder:) has not been implemented")
   }
   
-  func setup(with productDetails: ProductDetails) {
+  func setup(with productDetails: ProductDetails, offerBadge: Offer?) {
     viewModel.productDetails = productDetails
+    viewModel.offerBadge = offerBadge
   }
   
   private func bind() {
@@ -39,55 +36,64 @@ class ProductListingCell: UICollectionViewCell {
     viewModel.image.bind(self) { [weak self] image in
       self?.imageView.image = image
     }
+    viewModel.offerImage.bind(self) { [weak self] image in
+      self?.offerImageView.image = image
+    }
   }
   
   private func setupLayout() {
-    contentView.translatesAutoresizingMaskIntoConstraints = false
-    contentView.addSubview(imageView)
+    titleLabel.font = UIFont.systemFont(ofSize: 13.0)
+    titleLabel.contentInset = UIEdgeInsets(top: -7, left: 0, bottom: 0, right: 0)
+    titleLabel.textContainer.maximumNumberOfLines = 2
+    titleLabel.textContainer.lineBreakMode = .byTruncatingTail
+    priceLabel.font = UIFont.systemFont(ofSize: 13.0)
+    
     imageView.translatesAutoresizingMaskIntoConstraints = false
+    contentView.addSubview(imageView)
+    imageView.contentMode = .scaleAspectFill
+    imageView.clipsToBounds = true
+    
     contentView.addSubview(titleLabel)
     titleLabel.translatesAutoresizingMaskIntoConstraints = false
+    
     contentView.addSubview(priceLabel)
     priceLabel.translatesAutoresizingMaskIntoConstraints = false
-
-    backgroundColor = .blue
+    
+    contentView.addSubview(offerImageView)
+    offerImageView.translatesAutoresizingMaskIntoConstraints = false
+    offerImageView.contentMode = .scaleAspectFit
+    offerImageView.clipsToBounds = true
+    
     clipsToBounds = true
-    imageView.contentMode = .scaleAspectFit
-    let centerImageXConstraint = NSLayoutConstraint(item: imageView,
-                                               attribute: .centerX,
+    let leadingImageConstraint = NSLayoutConstraint(item: imageView,
+                                               attribute: .leading,
                                                relatedBy: .equal,
                                                toItem: contentView,
-                                               attribute: .centerX,
+                                               attribute: .leading,
                                                multiplier: 1.0,
                                                constant: 0.0)
-    let widthImageConstraint = NSLayoutConstraint(item: imageView,
-                                             attribute: .width,
+    let trailingImageConstraint = NSLayoutConstraint(item: imageView,
+                                             attribute: .trailing,
                                              relatedBy: .equal,
                                              toItem: contentView,
-                                             attribute: .width,
+                                             attribute: .trailing,
                                              multiplier: 1.0,
                                              constant: 0.0)
-    let heightImageConstraint = NSLayoutConstraint(item: imageView,
-                                             attribute: .height,
-                                             relatedBy: .equal,
-                                             toItem: imageView,
-                                             attribute: .width,
-                                             multiplier: 1.5,
-                                             constant: 0.0)
     let topImageConstraint = NSLayoutConstraint(item: imageView,
-                                               attribute: .topMargin,
+                                               attribute: .top,
                                                relatedBy: .equal,
                                                toItem: contentView,
-                                               attribute: .topMargin,
+                                               attribute: .top,
                                                multiplier: 1.0,
                                                constant: 0.0)
-    let topTitleLabelConstraint = NSLayoutConstraint(item: titleLabel,
-                                                     attribute: .top,
+    let topTitleLabelToImageConstraint = NSLayoutConstraint(item: titleLabel,
+                                                     attribute: .topMargin,
                                                      relatedBy: .equal,
                                                      toItem: imageView,
-                                                     attribute: .bottom,
+                                                     attribute: .bottomMargin,
                                                      multiplier: 1.0,
                                                      constant: Dimensions.imageToTitleMargin)
+    
     let leftTitleLabelConstraint = NSLayoutConstraint(item: titleLabel,
                                                       attribute: .leading,
                                                       relatedBy: .equal,
@@ -95,13 +101,27 @@ class ProductListingCell: UICollectionViewCell {
                                                       attribute: .leading,
                                                       multiplier: 1.0,
                                                       constant: Dimensions.horizontalMargin)
-//    let topPriceLabelConstraint = NSLayoutConstraint(item: priceLabel,
-//                                                     attribute: .top,
-//                                                     relatedBy: .equal,
-//                                                     toItem: titleLabel,
-//                                                     attribute: .bottom,
-//                                                     multiplier: 1.0,
-//                                                     constant: Dimensions.titleToPriceMargin)
+    let rightTitleLabelConstraint = NSLayoutConstraint(item: titleLabel,
+                                                       attribute: .trailing,
+                                                       relatedBy: .equal,
+                                                       toItem: contentView,
+                                                       attribute: .trailing,
+                                                       multiplier: 1.0,
+                                                       constant: -Dimensions.horizontalMargin)
+    let heightTitleLabelConstraint = NSLayoutConstraint(item: titleLabel,
+                                                        attribute: .height,
+                                                        relatedBy: .equal,
+                                                        toItem: nil,
+                                                        attribute: .notAnAttribute,
+                                                        multiplier: 1.0,
+                                                        constant: 2 * Dimensions.labelHeight)
+    let topPriceLabelConstraint = NSLayoutConstraint(item: priceLabel,
+                                                     attribute: .top,
+                                                     relatedBy: .equal,
+                                                     toItem: titleLabel,
+                                                     attribute: .bottom,
+                                                     multiplier: 1.0,
+                                                     constant: Dimensions.titleToPriceMargin)
     let leftPriceLabelConstraint = NSLayoutConstraint(item: priceLabel,
                                                       attribute: .leading,
                                                       relatedBy: .equal,
@@ -109,6 +129,20 @@ class ProductListingCell: UICollectionViewCell {
                                                       attribute: .leading,
                                                       multiplier: 1.0,
                                                       constant: Dimensions.horizontalMargin)
+    let rightPriceLabelConstraint = NSLayoutConstraint(item: priceLabel,
+                                                      attribute: .trailing,
+                                                      relatedBy: .equal,
+                                                      toItem: contentView,
+                                                      attribute: .trailing,
+                                                      multiplier: 1.0,
+                                                      constant: -Dimensions.horizontalMargin)
+    let heightPriceLabelConstraint = NSLayoutConstraint(item: priceLabel,
+                                                        attribute: .height,
+                                                        relatedBy: .equal,
+                                                        toItem: nil,
+                                                        attribute: .notAnAttribute,
+                                                        multiplier: 1.0,
+                                                        constant: Dimensions.labelHeight)
     let bottomPriceLabelConstraint = NSLayoutConstraint(item: priceLabel,
                                                         attribute: .bottom,
                                                         relatedBy: .equal,
@@ -116,17 +150,60 @@ class ProductListingCell: UICollectionViewCell {
                                                         attribute: .bottom,
                                                         multiplier: 1.0,
                                                         constant: 0.0)
-    
-    
-    contentView.addConstraints([centerImageXConstraint,
-                                widthImageConstraint,
-                                heightImageConstraint,
+    let widthOfferImageConstraint = NSLayoutConstraint(item: offerImageView,
+                                                       attribute: .width,
+                                                       relatedBy: .equal,
+                                                       toItem: nil,
+                                                       attribute: .notAnAttribute,
+                                                       multiplier: 1.0,
+                                                       constant: Dimensions.offerImageWidth)
+    let heightOfferImageConstraint = NSLayoutConstraint(item: offerImageView,
+                                                       attribute: .height,
+                                                       relatedBy: .equal,
+                                                       toItem: nil,
+                                                       attribute: .notAnAttribute,
+                                                       multiplier: 1.0,
+                                                       constant: Dimensions.offerImageHeight)
+    let rightOfferImageConstraint = NSLayoutConstraint(item: offerImageView,
+                                                      attribute: .trailing,
+                                                      relatedBy: .equal,
+                                                      toItem: contentView,
+                                                      attribute: .trailing,
+                                                      multiplier: 1.0,
+                                                      constant: -Dimensions.horizontalMargin)
+    let topOfferImageConstraint = NSLayoutConstraint(item: offerImageView,
+                                                      attribute: .top,
+                                                      relatedBy: .equal,
+                                                      toItem: contentView,
+                                                      attribute: .top,
+                                                      multiplier: 1.0,
+                                                      constant: Dimensions.verticalMargin)
+    contentView.addConstraints([leadingImageConstraint,
+                                trailingImageConstraint,
                                 topImageConstraint,
-                                topTitleLabelConstraint,
+                                topTitleLabelToImageConstraint,
                                 leftTitleLabelConstraint,
-//                                topPriceLabelConstraint,
+                                rightTitleLabelConstraint,
+                                heightTitleLabelConstraint,
+                                topPriceLabelConstraint,
                                 leftPriceLabelConstraint,
-                                bottomPriceLabelConstraint])
+                                rightPriceLabelConstraint,
+                                heightPriceLabelConstraint,
+                                bottomPriceLabelConstraint,
+                                widthOfferImageConstraint,
+                                heightOfferImageConstraint,
+                                rightOfferImageConstraint,
+                                topOfferImageConstraint
+    ])
   }
   
+}
+private class Dimensions {
+  static let horizontalMargin: CGFloat = 5.0
+  static let verticalMargin: CGFloat = 5.0
+  static let imageToTitleMargin: CGFloat = 18.0
+  static let titleToPriceMargin: CGFloat = 8.0
+  static let labelHeight: CGFloat = 20.0
+  static let offerImageHeight: CGFloat = 20.0
+  static let offerImageWidth: CGFloat = 50.0
 }

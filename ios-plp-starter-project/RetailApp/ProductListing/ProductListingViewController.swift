@@ -4,9 +4,12 @@ private let reuseIdentifier = ProductListingCell.identifier
 
 class ProductListingViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
   private var collectionView: UICollectionView?
+  private let router: Routing
   private let viewModel: ProductListingViewModel
   
-  init(viewModel: ProductListingViewModel = ProductListingViewModel()) {
+  init(router: Routing,
+       viewModel: ProductListingViewModel) {
+    self.router = router
     self.viewModel = viewModel
     super.init(nibName: nil, bundle: nil)
   }
@@ -24,8 +27,23 @@ class ProductListingViewController: UIViewController, UICollectionViewDataSource
   
   private func bind() {
     viewModel.productDetails.bind(self) { [weak self] price in
-      self?.collectionView?.reloadData()
+      self?.attemptReload()
     }
+    viewModel.appSetup.offers.bind(self) { [weak self] offers in
+      self?.attemptReload()
+    }
+  }
+  
+  private func attemptReload() {
+    guard let _ = viewModel.productDetails.value else {
+      print("product details are wrong")
+      return
+    }
+    guard let _ = viewModel.appSetup.offers.value else {
+      print("offers are wrong")
+      return
+    }
+    self.collectionView?.reloadData()
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -37,21 +55,21 @@ class ProductListingViewController: UIViewController, UICollectionViewDataSource
       fatalError("Loaded invalid cell")
     }
     let product = viewModel.product(at: indexPath.row)
-    cell.setup(with: product)
+    let badge = viewModel.badgeForProduct(at: indexPath.row)
+    cell.setup(with: product, offerBadge: badge)
     return cell
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let product = viewModel.product(at: indexPath.row)
     let viewModel = ProductDetailsViewModel(productRequest: product, listingImage: nil)
-    let viewController = ProductDetailsViewController(viewModel: viewModel)
-    self.navigationController?.pushViewController(viewController, animated: true)
+    let productDetailsViewController = ProductDetailsViewController(viewModel: viewModel)
+    router.push(viewController: productDetailsViewController)
   }
   
   private func setupCollectionView() {
     let layout = UICollectionViewFlowLayout()
     layout.itemSize = cellSize
-//    layout.sectionInset = UIEdgeInsets(top: 0, left: Dimensions.horizontalMargin, bottom: 0.0, right: Dimensions.horizontalMargin)
     layout.minimumInteritemSpacing = Dimensions.horizontalMargin
     layout.minimumLineSpacing = Dimensions.horizontalMargin
     collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
@@ -94,7 +112,7 @@ class ProductListingViewController: UIViewController, UICollectionViewDataSource
                                            toItem: view,
                                            attribute: .topMargin,
                                            multiplier: 1.0,
-                                           constant: 0)
+                                           constant: Dimensions.navigationBarTopInset)
     view.addConstraints([centerXConstraint,
                          bottomConstraint,
                          leadingConstraint,
@@ -103,11 +121,12 @@ class ProductListingViewController: UIViewController, UICollectionViewDataSource
   
   private lazy var cellSize: CGSize = {
     let width: CGFloat = (view.frame.width - 5 * Dimensions.horizontalMargin) / 2.0
-    let height: CGFloat = 200
+    let height: CGFloat = view.frame.height / 2.0
     return CGSize(width: width, height: height)
   }()
 }
 
 private class Dimensions {
   static let horizontalMargin: CGFloat = 5.0
+  static let navigationBarTopInset: CGFloat = 20.0
 }
