@@ -19,9 +19,9 @@ class ProductListingCellViewModel {
     }
   }
   
-  var offerBadge: Offer? {
+  var offer: Offer? {
     didSet {
-      guard let value = offerBadge else {
+      guard let value = offer else {
         return
       }
       downloadOfferBadgeImage(offer: value)

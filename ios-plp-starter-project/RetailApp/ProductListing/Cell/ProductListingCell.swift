@@ -21,9 +21,9 @@ class ProductListingCell: UICollectionViewCell {
     fatalError("init(coder:) has not been implemented")
   }
   
-  func setup(with productDetails: ProductDetails, offerBadge: Offer?) {
+  func setup(with productDetails: ProductDetails, offer: Offer?) {
     viewModel.productDetails = productDetails
-    viewModel.offerBadge = offerBadge
+    viewModel.offer = offer
   }
   
   private func bind() {
@@ -46,6 +46,7 @@ class ProductListingCell: UICollectionViewCell {
     titleLabel.contentInset = UIEdgeInsets(top: -7, left: 0, bottom: 0, right: 0)
     titleLabel.textContainer.maximumNumberOfLines = 2
     titleLabel.textContainer.lineBreakMode = .byTruncatingTail
+    titleLabel.isUserInteractionEnabled = false
     priceLabel.font = UIFont.systemFont(ofSize: 13.0)
     
     imageView.translatesAutoresizingMaskIntoConstraints = false

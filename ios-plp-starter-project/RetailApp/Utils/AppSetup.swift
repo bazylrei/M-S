@@ -2,7 +2,7 @@ import Foundation
 
 protocol AppSetupType {
   var offers: Observable<[Offer]?> { get }
-  func initiate()
+  func initiate(for user: String, completion: (() -> Void)?)
 }
 
 class AppSetup: AppSetupType {
@@ -13,10 +13,10 @@ class AppSetup: AppSetupType {
     self.offersListingProvider = offersListingProvider
   }
   
-  func initiate() {
-    offersListingProvider.fetch(for: "5") { [weak self] offers in
+  func initiate(for user: String = "5", completion: (() -> Void)? = nil) {
+    offersListingProvider.fetch(for: user) { [weak self] offers in
       self?.offers.value = offers
-      print(offers)
+      completion?()
     }
   }
 }

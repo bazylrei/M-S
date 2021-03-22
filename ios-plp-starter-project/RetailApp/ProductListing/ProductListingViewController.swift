@@ -26,7 +26,7 @@ class ProductListingViewController: UIViewController, UICollectionViewDataSource
   }
   
   private func bind() {
-    viewModel.productDetails.bind(self) { [weak self] price in
+    viewModel.productListing.bind(self) { [weak self] price in
       self?.attemptReload()
     }
     viewModel.appSetup.offers.bind(self) { [weak self] offers in
@@ -35,12 +35,10 @@ class ProductListingViewController: UIViewController, UICollectionViewDataSource
   }
   
   private func attemptReload() {
-    guard let _ = viewModel.productDetails.value else {
-      print("product details are wrong")
+    guard let _ = viewModel.productListing.value else {
       return
     }
     guard let _ = viewModel.appSetup.offers.value else {
-      print("offers are wrong")
       return
     }
     self.collectionView?.reloadData()
@@ -55,8 +53,8 @@ class ProductListingViewController: UIViewController, UICollectionViewDataSource
       fatalError("Loaded invalid cell")
     }
     let product = viewModel.product(at: indexPath.row)
-    let badge = viewModel.badgeForProduct(at: indexPath.row)
-    cell.setup(with: product, offerBadge: badge)
+    let badge = viewModel.offerForProduct(at: indexPath.row)
+    cell.setup(with: product, offer: badge)
     return cell
   }
   

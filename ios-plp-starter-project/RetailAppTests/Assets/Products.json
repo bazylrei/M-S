@@ -1,0 +1,47 @@
+{
+  "products": [
+    {
+      "id": "2",
+      "image_key": "SD_01_T38_1502_Y0_X_EC_0",
+      "name": "Round Neck Jumper",
+      "offer_ids": [
+        "2",
+        "3",
+        "5",
+        "4"
+      ],
+      "price": {
+        "currency_code": "GBP",
+        "current_price": 1250,
+        "original_price": 1400
+      }
+    },
+    {
+      "id": "3",
+      "image_key": "SD_01_T42_7049S_B4_X_EC_0",
+      "name": "Jersey Animal Print Swing Mini Dress",
+      "offer_ids": [
+        "4",
+        "1"
+      ],
+      "price": {
+        "currency_code": "GBP",
+        "current_price": 1500,
+        "original_price": 5000
+      }
+    },
+    {
+      "id": "4",
+      "image_key": "SD_01_T41_1519_Y0_X_EC_0",
+      "name": "Cotton Rich Scoop Neck Longline Vest Top",
+      "offer_ids": [
+        "5",
+        "4"
+      ],
+      "price": {
+        "currency_code": "GBP",
+        "current_price": 650
+      }
+    }
+  ]
+}

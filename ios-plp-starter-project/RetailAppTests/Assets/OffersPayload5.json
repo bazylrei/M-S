@@ -1,0 +1,30 @@
+{
+  "available_badges": "gonesoon:REDUCED||sale:PRIORITY_ACCESS||loyalty:SLOTTED,BONUS",
+  "offers": [
+    {
+      "id": "1",
+      "title": "Get it while it lasts!",
+      "type": "REDUCED"
+    },
+    {
+      "id": "2",
+      "title": "Extra loyalty points!",
+      "type": "BONUS"
+    },
+    {
+      "id": "3",
+      "title": "Priority Access!",
+      "type": "PRIORITY_ACCESS"
+    },
+    {
+      "id": "4",
+      "title": "Discount available!",
+      "type": "SLOTTED"
+    },
+    {
+      "id": "5",
+      "title": "Super sale!",
+      "type": "BONUS"
+    }
+  ]
+}
