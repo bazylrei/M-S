@@ -36,9 +36,41 @@
 		306805AC21F22FC600B99BB8 /* PriceFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306805AB21F22FC600B99BB8 /* PriceFormatter.swift */; };
 		3079EA80223BF9420088BF4C /* ProductRequestStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3079EA7F223BF9420088BF4C /* ProductRequestStub.swift */; };
 		30C4F5E521F27BBD0042865A /* ProductDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C4F5E421F27BBD0042865A /* ProductDetailsService.swift */; };
+		D93E948D260530EA007066F1 /* ProductListingCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93E948C260530EA007066F1 /* ProductListingCellViewModel.swift */; };
+		D93E949326060E15007066F1 /* OffersListingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93E949226060E15007066F1 /* OffersListingService.swift */; };
+		D93E949726060E49007066F1 /* OfferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93E949626060E49007066F1 /* OfferModel.swift */; };
+		D93E949B26060E93007066F1 /* OffersPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93E949A26060E93007066F1 /* OffersPayload.swift */; };
+		D93E94A026074D7A007066F1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93E949F26074D7A007066F1 /* Router.swift */; };
+		D93E94A7260765AC007066F1 /* AppSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93E94A6260765AC007066F1 /* AppSetup.swift */; };
+		D93E94AE26076850007066F1 /* OffersListingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93E94AD26076850007066F1 /* OffersListingProvider.swift */; };
+		D93E94B62607761F007066F1 /* OffersFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93E94B52607761F007066F1 /* OffersFormatter.swift */; };
+		D93E94BC26077C08007066F1 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93E94BB26077C08007066F1 /* Badge.swift */; };
+		D93E94C02607EBEC007066F1 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93E94BF2607EBEC007066F1 /* Offer.swift */; };
+		D959038E26086D7E000A1949 /* OffersFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959038D26086D7E000A1949 /* OffersFormatterTests.swift */; };
+		D959039526086EA5000A1949 /* OffersPayload5.json in Resources */ = {isa = PBXBuildFile; fileRef = D959039426086EA5000A1949 /* OffersPayload5.json */; };
+		D959039B26086F24000A1949 /* JSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959039A26086F24000A1949 /* JSONLoader.swift */; };
+		D9A70AFA260872D7003C154F /* OffersPayload5.json in Resources */ = {isa = PBXBuildFile; fileRef = D959039426086EA5000A1949 /* OffersPayload5.json */; };
+		D9A70AFE26087719003C154F /* OffersPayload3.json in Resources */ = {isa = PBXBuildFile; fileRef = D9A70AFD26087719003C154F /* OffersPayload3.json */; };
+		D9A70B0326087784003C154F /* OffersPayload3.json in Resources */ = {isa = PBXBuildFile; fileRef = D9A70AFD26087719003C154F /* OffersPayload3.json */; };
+		D9A70B072608797D003C154F /* MockProductListingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A70B062608797D003C154F /* MockProductListingService.swift */; };
+		D9A70B0B26087A6B003C154F /* ProductListingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A70B0A26087A6B003C154F /* ProductListingViewModelTests.swift */; };
+		D9A70B1126087AEB003C154F /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = D9A70B1026087AEB003C154F /* Products.json */; };
+		D9A70B1426087B5A003C154F /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = D9A70B1026087AEB003C154F /* Products.json */; };
+		D9A70B1826087C08003C154F /* MockAppSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A70B1726087C08003C154F /* MockAppSetup.swift */; };
+		D9A70B1E26088F35003C154F /* OffersListingProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A70B1D26088F35003C154F /* OffersListingProviderTests.swift */; };
+		D9A70B25260890D6003C154F /* MockOffersListingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A70B24260890D6003C154F /* MockOffersListingService.swift */; };
+		D9A70B2D26089314003C154F /* MockOffersFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A70B2C26089314003C154F /* MockOffersFormatter.swift */; };
+		D9A70B3326089731003C154F /* ProductListingCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A70B3226089731003C154F /* ProductListingCellViewModelTests.swift */; };
+		D9A70B3926089805003C154F /* MockPriceFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A70B3826089805003C154F /* MockPriceFormatter.swift */; };
+		D9A70B4226089C24003C154F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3046987C21F0D5610056504A /* Assets.xcassets */; };
+		D9A70B4826089F27003C154F /* AppSetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A70B4726089F27003C154F /* AppSetupTests.swift */; };
+		D9A70B4C2608A1B7003C154F /* MockOffersListingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A70B4B2608A1B7003C154F /* MockOffersListingProvider.swift */; };
 		D9FEF9012603D3FD00ABBD5A /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FEF9002603D3FD00ABBD5A /* Path.swift */; };
 		D9FEF90C2603D70E00ABBD5A /* ProductListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FEF90B2603D70E00ABBD5A /* ProductListingViewController.swift */; };
 		D9FEF9122603D72B00ABBD5A /* ProductListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FEF9112603D72B00ABBD5A /* ProductListingViewModel.swift */; };
+		D9FEF9162603D84900ABBD5A /* ProductsListingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FEF9152603D84900ABBD5A /* ProductsListingService.swift */; };
+		D9FEF91C2603F0EE00ABBD5A /* ProductListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FEF91B2603F0EE00ABBD5A /* ProductListing.swift */; };
+		D9FEF9272603FE2100ABBD5A /* ProductListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FEF9262603FE2100ABBD5A /* ProductListingCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,9 +119,37 @@
 		306805AB21F22FC600B99BB8 /* PriceFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceFormatter.swift; sourceTree = "<group>"; };
 		3079EA7F223BF9420088BF4C /* ProductRequestStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRequestStub.swift; sourceTree = "<group>"; };
 		30C4F5E421F27BBD0042865A /* ProductDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsService.swift; sourceTree = "<group>"; };
+		D93E948C260530EA007066F1 /* ProductListingCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListingCellViewModel.swift; sourceTree = "<group>"; };
+		D93E949226060E15007066F1 /* OffersListingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersListingService.swift; sourceTree = "<group>"; };
+		D93E949626060E49007066F1 /* OfferModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferModel.swift; sourceTree = "<group>"; };
+		D93E949A26060E93007066F1 /* OffersPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersPayload.swift; sourceTree = "<group>"; };
+		D93E949F26074D7A007066F1 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		D93E94A6260765AC007066F1 /* AppSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSetup.swift; sourceTree = "<group>"; };
+		D93E94AD26076850007066F1 /* OffersListingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersListingProvider.swift; sourceTree = "<group>"; };
+		D93E94B52607761F007066F1 /* OffersFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersFormatter.swift; sourceTree = "<group>"; };
+		D93E94BB26077C08007066F1 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		D93E94BF2607EBEC007066F1 /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
+		D959038D26086D7E000A1949 /* OffersFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersFormatterTests.swift; sourceTree = "<group>"; };
+		D959039426086EA5000A1949 /* OffersPayload5.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OffersPayload5.json; sourceTree = "<group>"; };
+		D959039A26086F24000A1949 /* JSONLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONLoader.swift; sourceTree = "<group>"; };
+		D9A70AFD26087719003C154F /* OffersPayload3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OffersPayload3.json; sourceTree = "<group>"; };
+		D9A70B062608797D003C154F /* MockProductListingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProductListingService.swift; sourceTree = "<group>"; };
+		D9A70B0A26087A6B003C154F /* ProductListingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListingViewModelTests.swift; sourceTree = "<group>"; };
+		D9A70B1026087AEB003C154F /* Products.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Products.json; sourceTree = "<group>"; };
+		D9A70B1726087C08003C154F /* MockAppSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppSetup.swift; sourceTree = "<group>"; };
+		D9A70B1D26088F35003C154F /* OffersListingProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersListingProviderTests.swift; sourceTree = "<group>"; };
+		D9A70B24260890D6003C154F /* MockOffersListingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockOffersListingService.swift; sourceTree = "<group>"; };
+		D9A70B2C26089314003C154F /* MockOffersFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockOffersFormatter.swift; sourceTree = "<group>"; };
+		D9A70B3226089731003C154F /* ProductListingCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListingCellViewModelTests.swift; sourceTree = "<group>"; };
+		D9A70B3826089805003C154F /* MockPriceFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPriceFormatter.swift; sourceTree = "<group>"; };
+		D9A70B4726089F27003C154F /* AppSetupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSetupTests.swift; sourceTree = "<group>"; };
+		D9A70B4B2608A1B7003C154F /* MockOffersListingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockOffersListingProvider.swift; sourceTree = "<group>"; };
 		D9FEF9002603D3FD00ABBD5A /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		D9FEF90B2603D70E00ABBD5A /* ProductListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListingViewController.swift; sourceTree = "<group>"; };
 		D9FEF9112603D72B00ABBD5A /* ProductListingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListingViewModel.swift; sourceTree = "<group>"; };
+		D9FEF9152603D84900ABBD5A /* ProductsListingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListingService.swift; sourceTree = "<group>"; };
+		D9FEF91B2603F0EE00ABBD5A /* ProductListing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListing.swift; sourceTree = "<group>"; };
+		D9FEF9262603FE2100ABBD5A /* ProductListingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListingCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +176,7 @@
 				3025808A223BC1810073704D /* PriceFormatterTests.swift */,
 				3018648E223BCEF80026CED6 /* InformationFormatterTests.swift */,
 				30186492223BD01E0026CED6 /* ObservableTests.swift */,
+				D959038D26086D7E000A1949 /* OffersFormatterTests.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -140,11 +201,14 @@
 		3018649D223BE1630026CED6 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				3018649E223BE1770026CED6 /* MockProductDetailsService.swift */,
+				D9A70B2326088FA7003C154F /* Services */,
 				301864A4223BF76B0026CED6 /* TestModel.swift */,
 				3079EA7F223BF9420088BF4C /* ProductRequestStub.swift */,
-				301864A0223BE18D0026CED6 /* MockImageService.swift */,
 				301864A2223BEAAB0026CED6 /* MockURLSessionProtocol.swift */,
+				D959039A26086F24000A1949 /* JSONLoader.swift */,
+				D9A70B1726087C08003C154F /* MockAppSetup.swift */,
+				D9A70B2C26089314003C154F /* MockOffersFormatter.swift */,
+				D9A70B4B2608A1B7003C154F /* MockOffersListingProvider.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -163,6 +227,8 @@
 			children = (
 				30590CAB2211BA4300FE716E /* ImageService.swift */,
 				30C4F5E421F27BBD0042865A /* ProductDetailsService.swift */,
+				D9FEF9152603D84900ABBD5A /* ProductsListingService.swift */,
+				D93E949226060E15007066F1 /* OffersListingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -189,6 +255,7 @@
 		3046987421F0D55F0056504A /* RetailApp */ = {
 			isa = PBXGroup;
 			children = (
+				D93E94A526076586007066F1 /* Utils */,
 				304698A521F0D7020056504A /* API */,
 				303522712239287A00AB1973 /* Services */,
 				306805AA21F22FB100B99BB8 /* Helper */,
@@ -206,7 +273,10 @@
 		3046988921F0D5620056504A /* RetailAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				D9A70B1B26088ED9003C154F /* Utils */,
+				D959039326086E88000A1949 /* Assets */,
 				3018649D223BE1630026CED6 /* Mocks */,
+				D959038626080D18000A1949 /* ProductListing */,
 				3018649A223BE0210026CED6 /* ProductDetails */,
 				3046988C21F0D5620056504A /* Info.plist */,
 				30186494223BDA050026CED6 /* Helper */,
@@ -243,6 +313,11 @@
 				3068059B21F21F9900B99BB8 /* ProductDetails.swift */,
 				306805A621F22A7200B99BB8 /* ProductInformation.swift */,
 				3068059D21F21FC100B99BB8 /* Price.swift */,
+				D9FEF91B2603F0EE00ABBD5A /* ProductListing.swift */,
+				D93E94BF2607EBEC007066F1 /* Offer.swift */,
+				D93E949626060E49007066F1 /* OfferModel.swift */,
+				D93E94BB26077C08007066F1 /* Badge.swift */,
+				D93E949A26060E93007066F1 /* OffersPayload.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -253,17 +328,94 @@
 				306805AB21F22FC600B99BB8 /* PriceFormatter.swift */,
 				301581482215A99200199803 /* InformationFormatter.swift */,
 				301581462215A6AF00199803 /* Observable.swift */,
+				D93E94B52607761F007066F1 /* OffersFormatter.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		D93E94A526076586007066F1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D93E94AC2607683E007066F1 /* Providers */,
+				D93E949F26074D7A007066F1 /* Router.swift */,
+				D93E94A6260765AC007066F1 /* AppSetup.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D93E94AC2607683E007066F1 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				D93E94AD26076850007066F1 /* OffersListingProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		D959038626080D18000A1949 /* ProductListing */ = {
+			isa = PBXGroup;
+			children = (
+				D9A70B0A26087A6B003C154F /* ProductListingViewModelTests.swift */,
+				D9A70B3226089731003C154F /* ProductListingCellViewModelTests.swift */,
+			);
+			path = ProductListing;
+			sourceTree = "<group>";
+		};
+		D959039326086E88000A1949 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D959039426086EA5000A1949 /* OffersPayload5.json */,
+				D9A70AFD26087719003C154F /* OffersPayload3.json */,
+				D9A70B1026087AEB003C154F /* Products.json */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		D9A70B1B26088ED9003C154F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D9A70B1C26088EE7003C154F /* Providers */,
+				D9A70B4726089F27003C154F /* AppSetupTests.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D9A70B1C26088EE7003C154F /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				D9A70B1D26088F35003C154F /* OffersListingProviderTests.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		D9A70B2326088FA7003C154F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3018649E223BE1770026CED6 /* MockProductDetailsService.swift */,
+				301864A0223BE18D0026CED6 /* MockImageService.swift */,
+				D9A70B062608797D003C154F /* MockProductListingService.swift */,
+				D9A70B24260890D6003C154F /* MockOffersListingService.swift */,
+				D9A70B3826089805003C154F /* MockPriceFormatter.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		D9FEF9042603D63300ABBD5A /* ProductListing */ = {
 			isa = PBXGroup;
 			children = (
-				D9FEF90B2603D70E00ABBD5A /* ProductListingViewController.swift */,
+				D9FEF91F2603FDDF00ABBD5A /* Cell */,
 				D9FEF9112603D72B00ABBD5A /* ProductListingViewModel.swift */,
+				D9FEF90B2603D70E00ABBD5A /* ProductListingViewController.swift */,
 			);
 			path = ProductListing;
+			sourceTree = "<group>";
+		};
+		D9FEF91F2603FDDF00ABBD5A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D9FEF9262603FE2100ABBD5A /* ProductListingCell.swift */,
+				D93E948C260530EA007066F1 /* ProductListingCellViewModel.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,8 +502,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3046988021F0D5610056504A /* LaunchScreen.storyboard in Resources */,
+				D9A70AFA260872D7003C154F /* OffersPayload5.json in Resources */,
 				3046987D21F0D5610056504A /* Assets.xcassets in Resources */,
 				306805A921F22B2200B99BB8 /* ProductDetailsView.xib in Resources */,
+				D9A70B0326087784003C154F /* OffersPayload3.json in Resources */,
+				D9A70B1426087B5A003C154F /* Products.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +514,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9A70AFE26087719003C154F /* OffersPayload3.json in Resources */,
+				D959039526086EA5000A1949 /* OffersPayload5.json in Resources */,
+				D9A70B1126087AEB003C154F /* Products.json in Resources */,
+				D9A70B4226089C24003C154F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,19 +528,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D93E949726060E49007066F1 /* OfferModel.swift in Sources */,
+				D93E94BC26077C08007066F1 /* Badge.swift in Sources */,
 				304698AB21F0D7C50056504A /* Result.swift in Sources */,
 				D9FEF9122603D72B00ABBD5A /* ProductListingViewModel.swift in Sources */,
+				D9FEF91C2603F0EE00ABBD5A /* ProductListing.swift in Sources */,
+				D9FEF9272603FE2100ABBD5A /* ProductListingCell.swift in Sources */,
 				3046987821F0D55F0056504A /* ProductDetailsViewController.swift in Sources */,
 				D9FEF90C2603D70E00ABBD5A /* ProductListingViewController.swift in Sources */,
 				D9FEF9012603D3FD00ABBD5A /* Path.swift in Sources */,
+				D93E949B26060E93007066F1 /* OffersPayload.swift in Sources */,
+				D93E94A7260765AC007066F1 /* AppSetup.swift in Sources */,
 				3068059C21F21F9900B99BB8 /* ProductDetails.swift in Sources */,
+				D9FEF9162603D84900ABBD5A /* ProductsListingService.swift in Sources */,
+				D93E94AE26076850007066F1 /* OffersListingProvider.swift in Sources */,
 				3068059A21F21F8400B99BB8 /* ProductDetailsViewModel.swift in Sources */,
+				D93E94A026074D7A007066F1 /* Router.swift in Sources */,
 				304698AD21F0DBB90056504A /* HTTPError.swift in Sources */,
 				306805AC21F22FC600B99BB8 /* PriceFormatter.swift in Sources */,
 				304698A721F0D70D0056504A /* Resource.swift in Sources */,
+				D93E949326060E15007066F1 /* OffersListingService.swift in Sources */,
+				D93E948D260530EA007066F1 /* ProductListingCellViewModel.swift in Sources */,
 				301581492215A99200199803 /* InformationFormatter.swift in Sources */,
+				D93E94C02607EBEC007066F1 /* Offer.swift in Sources */,
 				304698A421F0D5800056504A /* API.swift in Sources */,
 				30C4F5E521F27BBD0042865A /* ProductDetailsService.swift in Sources */,
+				D93E94B62607761F007066F1 /* OffersFormatter.swift in Sources */,
 				30590CAC2211BA4300FE716E /* ImageService.swift in Sources */,
 				306805A721F22A7200B99BB8 /* ProductInformation.swift in Sources */,
 				301581472215A6AF00199803 /* Observable.swift in Sources */,
@@ -394,15 +566,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9A70B072608797D003C154F /* MockProductListingService.swift in Sources */,
 				3018649F223BE1770026CED6 /* MockProductDetailsService.swift in Sources */,
 				3025808B223BC1810073704D /* PriceFormatterTests.swift in Sources */,
 				3018649C223BE0370026CED6 /* ProductDetailsViewModelTests.swift in Sources */,
+				D9A70B0B26087A6B003C154F /* ProductListingViewModelTests.swift in Sources */,
+				D9A70B4826089F27003C154F /* AppSetupTests.swift in Sources */,
+				D959039B26086F24000A1949 /* JSONLoader.swift in Sources */,
 				30186493223BD01E0026CED6 /* ObservableTests.swift in Sources */,
 				30186499223BDA390026CED6 /* ResourceTests.swift in Sources */,
+				D9A70B25260890D6003C154F /* MockOffersListingService.swift in Sources */,
+				D959038E26086D7E000A1949 /* OffersFormatterTests.swift in Sources */,
+				D9A70B1826087C08003C154F /* MockAppSetup.swift in Sources */,
+				D9A70B3926089805003C154F /* MockPriceFormatter.swift in Sources */,
 				30186496223BDA220026CED6 /* APITests.swift in Sources */,
 				3018648F223BCEF80026CED6 /* InformationFormatterTests.swift in Sources */,
+				D9A70B2D26089314003C154F /* MockOffersFormatter.swift in Sources */,
+				D9A70B3326089731003C154F /* ProductListingCellViewModelTests.swift in Sources */,
+				D9A70B4C2608A1B7003C154F /* MockOffersListingProvider.swift in Sources */,
 				301864A5223BF76B0026CED6 /* TestModel.swift in Sources */,
 				301864A1223BE18D0026CED6 /* MockImageService.swift in Sources */,
+				D9A70B1E26088F35003C154F /* OffersListingProviderTests.swift in Sources */,
 				3079EA80223BF9420088BF4C /* ProductRequestStub.swift in Sources */,
 				301864A3223BEAAB0026CED6 /* MockURLSessionProtocol.swift in Sources */,
 			);

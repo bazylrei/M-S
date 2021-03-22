@@ -1,9 +1,10 @@
 import Foundation
 
-struct ProductDetails: Codable {
+struct ProductDetails: Codable, ProductRequest {
   let id: String
   let name: String
   let imageKey: String
   let price: Price
-  let information: [ProductInformation]
+  let offerIds: [String]?
+  let information: [ProductInformation]?
 }

@@ -7,7 +7,7 @@ protocol ProductDetailsService {
 class ProductDetailsServiceImplementation: ProductDetailsService {
   private let api: API
 
-  init(api: API) {
+  init(api: API = API()) {
     self.api = api
   }
 

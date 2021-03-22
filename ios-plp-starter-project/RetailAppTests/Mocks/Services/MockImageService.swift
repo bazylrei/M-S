@@ -13,4 +13,11 @@ class MockImageService: ImageService {
     requestedKeys.append(key)
     onDownloadCalled?()
   }
+  
+  func downloadBadge(name: String, completion: @escaping (Result<UIImage, Error>) -> Void) {
+    lastCompletion = completion
+    callCount += 1
+    requestedKeys.append(name)
+    onDownloadCalled?()
+  }
 }

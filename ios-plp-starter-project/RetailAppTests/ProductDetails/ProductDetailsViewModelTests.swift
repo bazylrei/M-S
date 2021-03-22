@@ -3,12 +3,21 @@ import XCTest
 
 class ProductDetailsViewModelTests: XCTestCase {
 
-  let productRequest = ProductRequestStub(id: "1", price: Price(currentPrice: 1, originalPrice: nil, currencyCode: ""), name: "")
-  let productDetails = ProductDetails(id: "1", name: "name", imageKey: "imageKey", price: Price(currentPrice: 1000, originalPrice: nil, currencyCode: "GBP"), information: [ProductInformation(sectionTitle: "title", sectionText: "section")])
+  let productRequest = ProductRequestStub(id: "1",
+                                          price: Price(currentPrice: 1, originalPrice: nil, currencyCode: ""),
+                                          name: "")
+  let productDetails = ProductDetails(id: "1",
+                                      name: "name",
+                                      imageKey: "imageKey",
+                                      price: Price(currentPrice: 1000, originalPrice: nil, currencyCode: "GBP"), offerIds: [],
+                                      information: [ProductInformation(sectionTitle: "title", sectionText: "section")])
 
   func test_init_startsFetchingProductDetails() {
     let mockProductDetailsService = MockProductDetailsService()
-    _ = ProductDetailsViewModel(productRequest: ProductRequestStub(id: "1", price: Price(currentPrice: 1, originalPrice: nil, currencyCode: ""), name: ""), listingImage: nil, productDetailsService: mockProductDetailsService, imageService: MockImageService())
+    _ = ProductDetailsViewModel(productRequest: ProductRequestStub(id: "1", price: Price(currentPrice: 1, originalPrice: nil, currencyCode: ""), name: ""),
+                                listingImage: nil,
+                                productDetailsService: mockProductDetailsService,
+                                imageService: MockImageService())
     XCTAssertEqual(mockProductDetailsService.callCount, 1)
     XCTAssertEqual(mockProductDetailsService.requestedIDs.first, "1")
   }

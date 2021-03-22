@@ -2,13 +2,14 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-  var window: UIWindow?
+  let router: Routing = Router()
+  let appSetup = AppSetup()
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    window = UIWindow(frame: UIScreen.main.bounds)
-    window!.makeKeyAndVisible()
-    window!.rootViewController = UINavigationController(rootViewController: UIViewController())
+    appSetup.initiate()
+    let viewModel = ProductListingViewModel(appSetup: appSetup)
+    let productListingVC = ProductListingViewController(router: router, viewModel: viewModel)
+    router.push(viewController: productListingVC)
     return true
   }
 }
-

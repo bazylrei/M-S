@@ -1,9 +1,16 @@
 import Foundation
 
 struct Path {
-  static let base = "http://interview-tech-testing.herokuapp.com/api/"
-  static let products = "products"
-  static let product = "product/"
-  static let user = "api/user/"
-  static let offers = "offers"
+  private static let base = "http://interview-tech-testing.herokuapp.com"
+  private static let products = "api/products"
+  private static let product = "api/product/"
+  private static let user = "api/user"
+  private static let offers = "offers"
+
+  static var baseURL = URL(string: base)!
+  static var productsURLString = products
+  
+  static func offerForCustomerURLString(withID id: String) -> String {
+    "\(user)/\(id)/\(offers)"
+  }
 }

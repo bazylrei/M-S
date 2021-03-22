@@ -32,8 +32,8 @@ class ProductDetailsViewModel {
 
   init(productRequest: ProductRequest,
        listingImage: UIImage?,
-       productDetailsService: ProductDetailsService,
-       imageService: ImageService,
+       productDetailsService: ProductDetailsService = ProductDetailsServiceImplementation(),
+       imageService: ImageService = ImageServiceImplementation(),
        priceFormatter: PriceFormatter = PriceFormatterImplementation(),
        informationFormatter: InformationFormatter = InformationFormatterImplementation()) {
     self.productDetailsService = productDetailsService
@@ -50,7 +50,7 @@ class ProductDetailsViewModel {
   private func updateObservables(productDetails: ProductDetails) {
     price.value = priceFormatter.formatPrice(productDetails.price)
     name.value = productDetails.name
-    information.value = informationFormatter.formatInformation(productDetails.information)
+    information.value = informationFormatter.formatInformation(productDetails.information ?? [])
   }
 
   private func getProduct(id: String) {
