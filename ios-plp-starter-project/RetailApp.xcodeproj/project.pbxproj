@@ -273,9 +273,9 @@
 		3046988921F0D5620056504A /* RetailAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				D9A70B1B26088ED9003C154F /* Utils */,
 				D959039326086E88000A1949 /* Assets */,
 				3018649D223BE1630026CED6 /* Mocks */,
+				D9A70B1B26088ED9003C154F /* Utils */,
 				D959038626080D18000A1949 /* ProductListing */,
 				3018649A223BE0210026CED6 /* ProductDetails */,
 				3046988C21F0D5620056504A /* Info.plist */,

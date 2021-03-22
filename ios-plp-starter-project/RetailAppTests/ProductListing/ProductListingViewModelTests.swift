@@ -7,10 +7,13 @@ class ProductListingViewModelTests: XCTestCase {
   let mockAppSetup = MockAppSetup()
   
   override func setUpWithError() throws {
-    self.productListing = JSONLoader.productsListing
+    try super.setUpWithError()
+    productListing = JSONLoader.productsListing
   }
   
   override func tearDownWithError() throws {
+    productListing = nil
+    try super.tearDownWithError()
   }
   
   func test_dataFetch() {

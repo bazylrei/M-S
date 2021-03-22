@@ -2,14 +2,7 @@ import XCTest
 @testable import RetailApp
 
 class OffersListingProviderTests: XCTestCase {
-  
   var offersProvider: OffersListingProvider!
-  
-  override func setUpWithError() throws {
-  }
-  
-  override func tearDownWithError() throws {
-  }
   
   func testOffersProviderFetch() {
     offersProvider = OffersListingProvider(offersListingService: MockOffersListingService(), offersFormatter: MockOffersFormatter())

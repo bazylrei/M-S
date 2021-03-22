@@ -2,19 +2,25 @@ import XCTest
 @testable import RetailApp
 
 class ProductListingCellViewModelTests: XCTestCase {
-  let mockImageService = MockImageService()
+  var mockImageService: MockImageService!
   var productListCellViewModel: ProductListingCellViewModel!
   var productDetails: ProductDetails!
   var offer: Offer!
   
   override func setUpWithError() throws {
+    try super.setUpWithError()
+    mockImageService = MockImageService()
     productListCellViewModel = ProductListingCellViewModel(priceFormatter: MockPriceFormatter(), imageService: mockImageService)
     productDetails = JSONLoader.firstProduct
     offer = Offer(id: "1", badge: Badge(name: "badge1", types: [], priority: 1))
   }
   
   override func tearDownWithError() throws {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    mockImageService = nil
+    productListCellViewModel = nil
+    productDetails = nil
+    offer = nil
+    try super.tearDownWithError()
   }
   
   func testUpdateProductDetails() {

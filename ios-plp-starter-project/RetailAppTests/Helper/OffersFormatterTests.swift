@@ -5,13 +5,6 @@ class OffersFormatterTests: XCTestCase {
   var offersPayload: OffersPayload!
   let offersFormatter = OffersFormatterImplementation()
   
-  override func setUpWithError() throws {
-  }
-  
-  override func tearDownWithError() throws {
-    
-  }
-  
   func testOffer() {
     self.offersPayload = JSONLoader.offersPayload(for: "5")
     

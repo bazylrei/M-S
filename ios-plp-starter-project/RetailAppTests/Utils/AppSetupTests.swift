@@ -7,9 +7,17 @@ class AppSetupTests: XCTestCase {
   var appSetup: AppSetup!
   var mockOffersListingProvider: MockOffersListingProvider!
   
-  override func setUpWithError() throws {
+  override func setUp() {
+    super.setUp()
     mockOffersListingProvider = MockOffersListingProvider()
-    self.appSetup = AppSetup(offersListingProvider: mockOffersListingProvider)
+    appSetup = AppSetup(offersListingProvider: mockOffersListingProvider)
+  }
+  
+  override func tearDown() {
+    mockOffersListingProvider = nil
+    appSetup = nil
+    offers = nil
+    super.tearDown()
   }
   
   func testInitiation() {
