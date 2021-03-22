@@ -118,7 +118,7 @@ class ProductListingViewController: UIViewController, UICollectionViewDataSource
   }
   
   private lazy var cellSize: CGSize = {
-    let width: CGFloat = (view.frame.width - 5 * Dimensions.horizontalMargin) / 2.0
+    let width: CGFloat = (view.frame.width - 7 * Dimensions.horizontalMargin) / 2.0
     let height: CGFloat = view.frame.height / 2.0
     return CGSize(width: width, height: height)
   }()

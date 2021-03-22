@@ -12,7 +12,7 @@ class ProductDetailsServiceImplementation: ProductDetailsService {
   }
 
   func getProduct(id: String, completion: @escaping (Result<ProductDetails, Error>) -> Void) {
-    let resource = Resource<ProductDetails>(path: "api/product/\(id)")
+    let resource = Resource<ProductDetails>(path: Path.productURLString(for: id))
     api.load(resource, completion: completion)
   }
 }

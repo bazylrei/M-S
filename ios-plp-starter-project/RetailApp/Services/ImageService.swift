@@ -17,7 +17,7 @@ class ImageServiceImplementation: ImageService {
   }
 
   func downloadImage(key: String, completion: @escaping (Result<UIImage, Error>) -> Void) {
-    let resource = Resource(path: "image/\(key).jpg", body: nil, method: "GET") { data -> Result<UIImage, Error> in
+    let resource = Resource(path: Path.imageURLString(with: key), body: nil, method: "GET") { data -> Result<UIImage, Error> in
       guard let image = UIImage(data: data) else {
         return .error(ImageDecodingError.badData)
       }

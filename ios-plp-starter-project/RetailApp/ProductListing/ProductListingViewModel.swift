@@ -28,7 +28,6 @@ class ProductListingViewModel {
     let availableOffers = productDetails.offerIds?.compactMap { offerID in
       appSetup.offers.value?.first(where: { $0.id == offerID })
     }
-    
     let topPriorityOffer = availableOffers?.min { a, b in a.badge.priority < b.badge.priority }
     return topPriorityOffer
   }

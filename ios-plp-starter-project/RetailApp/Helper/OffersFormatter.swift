@@ -7,7 +7,7 @@ protocol OffersFormatter {
 class OffersFormatterImplementation: OffersFormatter {
   func format(offersPayload: OffersPayload) -> [Offer]  {
     let badges = parse(availableBadges: offersPayload.availableBadges)
-    return setBadgesFor(offers: offersPayload.offers, badges: badges)
+    return createOffers(for: offersPayload, badges: badges)
   }
   
   private func parse(availableBadges: String) -> [Badge] {
@@ -33,8 +33,8 @@ class OffersFormatterImplementation: OffersFormatter {
     return badge
   }
   
-  private func setBadgesFor(offers: [OfferModel], badges: [Badge]) -> [Offer] {
-    offers.compactMap { offer in
+  private func createOffers(for offersPayload: OffersPayload, badges: [Badge]) -> [Offer] {
+    offersPayload.offers.compactMap { offer in
       guard let badge = badges.find(for: offer.type) else {
         return nil
       }

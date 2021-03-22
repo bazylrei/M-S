@@ -12,7 +12,7 @@ class OffersListingProviderTests: XCTestCase {
   }
   
   func testOffersProviderFetch() {
-    offersProvider = OffersListingProvider(offersListingService: MockOffersListingService(), offersFormatter: MockOffersFormatter(), imageService: MockImageService())
+    offersProvider = OffersListingProvider(offersListingService: MockOffersListingService(), offersFormatter: MockOffersFormatter())
     offersProvider.fetch(for: "0") { offers in
       XCTAssertEqual(offers.count, 5)
       
