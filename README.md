@@ -1,5 +1,5 @@
-# M-S
-Coding excercise for M&amp;S
+# 
+Coding excercise
 
 If I had more time, I would:
 
